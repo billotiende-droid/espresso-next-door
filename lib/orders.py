@@ -18,5 +18,10 @@ class Orders:
     @property
     def brew(self):
         return self._brew   
-    
-            
+
+    @brew.setter
+    def brew(self, brew):
+        from lib.coffee import Coffee
+        if not isinstance(brew, Coffee):
+            raise TypeError("Brew must be an instance of Coffee class")
+        self._brew = brew        
