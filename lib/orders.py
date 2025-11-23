@@ -24,4 +24,16 @@ class Orders:
         from lib.coffee import Coffee
         if not isinstance(brew, Coffee):
             raise TypeError("Brew must be an instance of Coffee class")
-        self._brew = brew        
+        self._brew = brew
+
+    @property
+    def price(self):
+        return self._price
+
+    @price.setter
+    def price(self, price):
+        if not isinstance(price, (int, float)):
+            raise TypeError("Price must be a number")
+        if price < 1.0  or price > 10.0:
+            raise ValueError("Price must be between 1.0 and 10.0 USD")
+        self._price = price            
