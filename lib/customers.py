@@ -40,4 +40,13 @@ class Customers:
         from orders import Order
         new_order = Order(self, brew, price)
         return new_order
+    
+    @classmethod
+    def most_aficionado(cls,coffee):
+        coffee_orders = [order for order in all_orders if order.brew == coffee]
+
+        if not coffee_orders:
+            return None
+        
+
         
