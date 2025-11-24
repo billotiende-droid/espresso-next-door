@@ -21,4 +21,6 @@ class Coffee:
         coffee_orders = [order for order in all_orders if order.brew == self]
         return coffee_orders
     
-   
+    def customers(self):
+        unique_customers = [order.customer for order in self.orders()]
+        return list(set(unique_customers))

@@ -1,3 +1,5 @@
+all_orders = []
+
 class Orders:
     def __init__(self,customer, brew, price):
         self.customer = customer
@@ -10,7 +12,7 @@ class Orders:
 
     @customer.setter
     def customer(self, customer):
-        from lib.customers import Customers
+        from customers import Customers
         if not isinstance(customer, Customers):
             raise TypeError("Customer must be an instance of Customers class")
         self._customer = customer
@@ -21,7 +23,7 @@ class Orders:
 
     @brew.setter
     def brew(self, brew):
-        from lib.coffee import Coffee
+        from coffee import Coffee
         if not isinstance(brew, Coffee):
             raise TypeError("Brew must be an instance of Coffee class")
         self._brew = brew
@@ -36,4 +38,8 @@ class Orders:
             raise TypeError("Price must be a number")
         if price < 1.0  or price > 10.0:
             raise ValueError("Price must be between 1.0 and 10.0 USD")
-        self._price = price            
+        self._price = price          
+
+
+
+# Example usage:
