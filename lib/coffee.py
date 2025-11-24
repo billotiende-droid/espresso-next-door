@@ -16,7 +16,9 @@ class Coffee:
 
 
   
-
-
-capucciono = Coffee("Cappuccino")
-print(capucciono.brew)  # Output: Cappuccino
+    def orders(self):
+        from orders import all_orders
+        coffee_orders = [order for order in all_orders if order.brew == self]
+        return coffee_orders
+    
+   
