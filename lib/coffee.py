@@ -1,3 +1,5 @@
+from orders import all_orders
+
 class Coffee:
     def __init__(self,brew):
         self.brew = brew
@@ -17,10 +19,12 @@ class Coffee:
 
   
     def orders(self):
-        from orders import all_orders
         coffee_orders = [order for order in all_orders if order.brew == self]
         return coffee_orders
     
     def customers(self):
         unique_customers = [order.customer for order in self.orders()]
         return list(set(unique_customers))
+    
+    def num_orders(self):
+        return len(self.orders())
