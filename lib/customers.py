@@ -48,5 +48,18 @@ class Customers:
         if not coffee_orders:
             return None
         
+        spending = {}
+        
+        for order in coffee_orders:
+            customer = order.customer
+
+            price = order.price
+
+            if customer in spending:
+                spending[customer] = 0
+            spending[customer] += price    
+
+
+
 
         
