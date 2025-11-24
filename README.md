@@ -73,3 +73,106 @@ venv\Scripts\activate     # Windows
 # Run Python scripts
 
 python3 main.py
+
+# Class Breakdown
+
+# Coffee Class
+
+Represents a coffee product.
+
+Requirements:
+
+Must accept a name
+
+Name must be at least 3 characters
+
+Uses property getters and setters
+
+# Customers Class
+
+Represents a customer of Espresso Next Door.
+
+Fields:
+
+name — validated (1–15 chars)
+
+email — freely stored
+
+# Special Class Method:
+
+# most_aficionado(coffee)
+
+Returns the customer who has spent the most money on a specific coffee.
+
+# Logic:
+
+Look through all orders in all_orders
+
+Filter orders for the given coffee
+
+Group prices by customer
+
+Sum spending per customer
+
+Return the customer with highest total
+
+Return None if no orders exist
+
+# Order Class
+Purpose:
+
+Links:
+
+A Customer
+
+A Coffee
+
+A price
+
+Every new order should append itself to all_orders.
+
+# Features Summary
+ Coffee validation
+
+Ensures coffee names are at least 3 letters.
+
+ Customer validation
+
+Names must be within 1–15 characters.
+
+Order tracking
+
+Every order goes into the global all_orders list.
+
+ Spending aggregation
+
+most_aficionado() finds the biggest spender for a specific coffee.
+
+# Fully OOP structured
+
+Uses:
+
+properties
+
+encapsulation
+
+class methods
+
+validation
+
+object relationships
+
+# Future Improvements (optional)
+
+Add unique customer IDs
+
+Add total customer spending method
+
+Add menu with multiple coffee types
+
+Build a CLI interface
+
+Connect to SQLite database.
+
+
+python3 main.py
