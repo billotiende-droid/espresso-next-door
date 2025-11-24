@@ -36,5 +36,8 @@ class Customers:
         unique_coffees = [order.brew for order in self.orders()]
         return list(set(unique_coffees))
     
-
+    def create_order(self, brew, price):
+        from orders import Order
+        new_order = Order(self, brew, price)
+        return new_order
         
