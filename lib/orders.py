@@ -1,10 +1,11 @@
 all_orders = []
 
-class Orders:
+class Order:
     def __init__(self,customer, brew, price):
         self.customer = customer
         self.brew = brew
         self.price = price
+        all_orders.append(self)
 
     @property
     def customer(self):
@@ -38,7 +39,9 @@ class Orders:
             raise TypeError("Price must be a number")
         if price < 1.0  or price > 10.0:
             raise ValueError("Price must be between 1.0 and 10.0 USD")
-        self._price = price          
+        self._price = price      
+
+
 
 
 
