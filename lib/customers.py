@@ -57,7 +57,9 @@ class Customers:
 
             if customer in spending:
                 spending[customer] = 0
-            spending[customer] += price    
+            spending[customer] += price   
+
+        return max(spending, key=lambda customer: spending[customer])     
 
 
 
